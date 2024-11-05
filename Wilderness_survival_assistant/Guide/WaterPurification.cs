@@ -1,9 +1,11 @@
 namespace Wilderness_survival_assistant.guid;
-
+// Define an abstract class for water purification methods in survival situations
 public abstract class WaterPurification:SurvivalGuide
 {
+    // Override the DisplayInfo method from the SurvivalGuide class
     public override void DisplayInfo()
     {
+        // Create an array of water purification methods to display to the user
         var lines = new[] 
         {
             "1. finding water sources" ,
@@ -12,8 +14,11 @@ public abstract class WaterPurification:SurvivalGuide
             " ",
             "Please select from the possible options: "
         };
+        // Print the available water purification methods to the console
         Console.WriteLine(string.Join(Environment.NewLine, lines));
+        // Read user input and convert it to lowercase for consistency
         string input = Console.ReadLine().ToLower();
+        // Split the input string into an array of chosen options
         string[] way = input.Split(',');
 
         // Remove spaces around array elements
@@ -21,7 +26,7 @@ public abstract class WaterPurification:SurvivalGuide
         {
             way[i] = way[i].Trim();
         }
-
+        // Check for the presence of specific water source finding techniques and provide instructions accordingly
         if (Array.Exists(way,  m   => m == "finding water sources"))
         {
             Console.WriteLine("- Rivers and Streams: Look for running water, as it is usually cleaner than standing water..");

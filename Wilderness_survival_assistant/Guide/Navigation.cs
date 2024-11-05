@@ -1,9 +1,11 @@
 namespace Wilderness_survival_assistant.guid;
-
+// Define an abstract class for navigation techniques in the context of survival
 public abstract class Navigation:SurvivalGuide
 {
+    // Override the DisplayInfo method from the SurvivalGuide class
     public override void DisplayInfo()
     {
+        // Create an array of navigation techniques to display to the user
         var lines = new[] 
         {
             "1. orienteering techniques the 'circle' scan technique." ,
@@ -15,8 +17,11 @@ public abstract class Navigation:SurvivalGuide
             " ",
             "Please select from the possible options: "
         };
+        // Print the navigation techniques to the console
         Console.WriteLine(string.Join(Environment.NewLine, lines));
+        // Read user input and convert it to lowercase
         string input = Console.ReadLine().ToLower();
+        // Split the input string into an array of chosen options
         string[] choose = input.Split(',');
 
         // Remove spaces around array elements
@@ -24,7 +29,7 @@ public abstract class Navigation:SurvivalGuide
         {
             choose[i] = choose[i].Trim();
         }
-
+        // Check for the presence of specific navigation techniques and provide instructions accordingly
         if (Array.Exists(choose,  m   => m == "orienteering techniques the 'circle' scan technique"))
         {
             Console.WriteLine("- Look around and note major landmarks on the horizon to get an idea of where you are.");
@@ -54,7 +59,7 @@ public abstract class Navigation:SurvivalGuide
             Console.WriteLine("- In the Northern Hemisphere, moss often grows on the north side of trees (but it is not always a reliable method).");
             Console.WriteLine("- In the Northern Hemisphere, moss often grows on the north side of trees (but it is not always a reliable method).");
         }
-        if (Array.Exists(choose,  m   => m == "1"))
+        else if (Array.Exists(choose,  m   => m == "1"))
         {
             Console.WriteLine("- Look around and note major landmarks on the horizon to get an idea of where you are.");
             Console.WriteLine("- The 'parallel' technique: Move in the direction of a landmark, checking to make sure you are not going off course.");

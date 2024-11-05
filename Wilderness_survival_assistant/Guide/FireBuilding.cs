@@ -1,11 +1,15 @@
 namespace Wilderness_survival_assistant.guid;
-
+// Define an abstract class for fire building in the context of survival
 public abstract class FireBuilding:SurvivalGuide
 {
+    // Override the DisplayInfo method from the SurvivalGuide class
     public override void DisplayInfo()
     {
+        // Prompt the user to enter available materials for building a fire
         Console.WriteLine("Enter available materials separated by commas  \n 1. flint steel. \n 2. magnifying glass. \n 3. battery foil. \n 4. wood rope. \n 5.stone knife \n Please select from the possible options: ");
+        // Read user input and convert it to lowercase
         string input = Console.ReadLine().ToLower();
+        // Split the input string into an array of materials
         string[] materials = input.Split(',');
 
         // Remove spaces around array elements
@@ -13,7 +17,7 @@ public abstract class FireBuilding:SurvivalGuide
         {
             materials[i] = materials[i].Trim();
         }
-
+        // Check for the presence of specific materials and provide instructions accordingly
         if (Array.Exists(materials,  m   => m == "flint steel")) 
         {
             Console.WriteLine("- Hold the flint over a dry, flammable material such as grass or moss.");
@@ -43,7 +47,7 @@ public abstract class FireBuilding:SurvivalGuide
             Console.WriteLine("- Hit the edge of the stone with a knife to create sparks.");
             Console.WriteLine("- Direct sparks at dry moss or grass to ignite.");
         }
-        if (Array.Exists(materials,  m   => m == "1")) 
+        else if (Array.Exists(materials,  m   => m == "1")) 
         {
             Console.WriteLine("- Hold the flint over a dry, flammable material such as grass or moss.");
             Console.WriteLine("- Hit the flint with a metal object to create sparks.");
