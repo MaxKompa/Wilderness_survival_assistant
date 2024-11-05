@@ -67,7 +67,7 @@ public abstract class FireBuilding:SurvivalGuide
             Console.WriteLine("- Place the ends on the battery, the central part will heat up and may catch fire.");
             Console.WriteLine("- Keep this near dry flammable material.");
         }
-        else if (Array.Exists(materials, m => m == "stone knife"))
+        else if (Array.Exists(materials, m => m == "5"))
         {
             Console.WriteLine("- Hit the edge of the stone with a knife to create sparks.");
             Console.WriteLine("- Direct sparks at dry moss or grass to ignite.");
