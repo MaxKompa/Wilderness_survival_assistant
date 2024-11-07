@@ -57,7 +57,7 @@ public abstract class Navigation:SurvivalGuide
         else if (Array.Exists(choose, m => m == "using materials moss on trees"))
         {
             Console.WriteLine("- In the Northern Hemisphere, moss often grows on the north side of trees (but it is not always a reliable method).");
-            Console.WriteLine("- In the Northern Hemisphere, moss often grows on the north side of trees (but it is not always a reliable method).");
+            Console.WriteLine("- Some trees may lean towards the sun, and this can give a clue as to direction).");
         }
         else if (Array.Exists(choose,  m   => m == "1"))
         {
@@ -86,7 +86,7 @@ public abstract class Navigation:SurvivalGuide
         else if (Array.Exists(choose, m => m == "6"))
         {
             Console.WriteLine("- In the Northern Hemisphere, moss often grows on the north side of trees (but it is not always a reliable method).");
-            Console.WriteLine("- In the Northern Hemisphere, moss often grows on the north side of trees (but it is not always a reliable method).");
+            Console.WriteLine("- Some trees may lean towards the sun, and this can give a clue as to direction).");
         }
         else
         {
